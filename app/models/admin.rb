@@ -4,5 +4,5 @@ class Admin < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  scope :all_admins, -> { where(admin: true).or(User.where(admin: true)) }
+  has_one :user, dependent: :destroy
 end
