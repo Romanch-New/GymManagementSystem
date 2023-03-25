@@ -52,21 +52,20 @@ gem "bootsnap", require: false
 gem 'devise'
 # cancancan gem for authorization [cancancan gem documentation](for more details about use)
 gem 'cancancan'
-# rails-erd gem for generating entity relationship diagram [rails-erd gem documentation](for more details about use)
-gem 'rails-erd'
-# faker gem for generating fake data [faker gem documentation](for more details about use)
-gem 'faker'
-
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'rubocop', require: false
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
   gem 'rubocop-sequel', require: false
-  gem 'hirb'
+  # rails-erd gem for generating entity relationship diagram [rails-erd gem documentation](for more details about use)
+  gem 'rails-erd'
+  # faker gem for generating fake data [faker gem documentation](for more details about use)
+  gem 'faker'
+  # byebug gem for debugging [byebug gem documentation](for more details about use)
+  gem 'pry-rails'
 end
 
 group :development do

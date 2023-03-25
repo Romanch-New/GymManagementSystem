@@ -16,12 +16,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_25_133223) do
 
   create_table "admin_roles", force: :cascade do |t|
     t.bigint "admin_id", null: false
-    t.bigint "roles_id", null: false
+    t.bigint "role_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["admin_id", "roles_id"], name: "index_admin_roles_on_admin_id_and_roles_id", unique: true
+    t.index ["admin_id", "role_id"], name: "index_admin_roles_on_admin_id_and_role_id", unique: true
     t.index ["admin_id"], name: "index_admin_roles_on_admin_id"
-    t.index ["roles_id"], name: "index_admin_roles_on_roles_id"
+    t.index ["role_id"], name: "index_admin_roles_on_role_id"
   end
 
   create_table "admin_users", force: :cascade do |t|
@@ -55,11 +55,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_25_133223) do
 
   create_table "user_roles", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "roles_id", null: false
+    t.bigint "role_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["roles_id"], name: "index_user_roles_on_roles_id"
-    t.index ["user_id", "roles_id"], name: "index_user_roles_on_user_id_and_roles_id", unique: true
+    t.index ["role_id"], name: "index_user_roles_on_role_id"
+    t.index ["user_id", "role_id"], name: "index_user_roles_on_user_id_and_role_id", unique: true
     t.index ["user_id"], name: "index_user_roles_on_user_id"
   end
 
@@ -78,9 +78,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_25_133223) do
   end
 
   add_foreign_key "admin_roles", "admins"
-  add_foreign_key "admin_roles", "roles", column: "roles_id"
+  add_foreign_key "admin_roles", "roles"
   add_foreign_key "admin_users", "admins"
   add_foreign_key "admin_users", "users"
-  add_foreign_key "user_roles", "roles", column: "roles_id"
+  add_foreign_key "user_roles", "roles"
   add_foreign_key "user_roles", "users"
 end
