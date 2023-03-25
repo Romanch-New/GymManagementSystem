@@ -5,17 +5,19 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-
+# binding.pry
 #delete all table before create new data
-Admin.delete_all
-User.delete_all
-AdminUser.delete_all
-Role.delete_all
+require 'pry'
+
 AdminRole.delete_all
+AdminUser.delete_all
 UserRole.delete_all
+Role.delete_all
+User.delete_all
+Admin.delete_all
 
 require 'faker'
-require 'pry'
+
 # Create 10 users with random names and emails
 
 
