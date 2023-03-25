@@ -54,6 +54,8 @@ gem 'devise'
 gem 'cancancan'
 # rails-erd gem for generating entity relationship diagram [rails-erd gem documentation](for more details about use)
 gem 'rails-erd'
+# faker gem for generating fake data [faker gem documentation](for more details about use)
+gem 'faker'
 
 
 group :development, :test do
