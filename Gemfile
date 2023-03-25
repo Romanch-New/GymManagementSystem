@@ -33,9 +33,6 @@ gem "redis", "~> 4.0"
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
-# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
-
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
@@ -64,8 +61,9 @@ group :development, :test do
   gem 'rails-erd'
   # faker gem for generating fake data [faker gem documentation](for more details about use)
   gem 'faker'
-  # byebug gem for debugging [byebug gem documentation](for more details about use)
+  # pry gem for debugging [pry gem documentation](for more details about use)
   gem 'pry-rails'
+  gem 'pry'
 end
 
 group :development do
@@ -80,6 +78,7 @@ group :development do
 end
 
 group :test do
+  # todo: add RSpec for testing
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"

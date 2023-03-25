@@ -10,8 +10,6 @@ module GymManagementSystem
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
-    # pry gem for debugging [pry gem documentation](for more details about use)
-    require 'pry'
 
     # config.to_prepare do
     #   Devise::SessionsController.layout "your_layout_name"

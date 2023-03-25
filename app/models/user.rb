@@ -4,6 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # TODO: add more validations for name, email and password.
+  # Todo: add more parameters for user.
+  # TODO: add default role to user for all users except defined roles.
+  # todo: use cancancan ability to define user roles.
+
   # create many to many relationship with roles table by using user_roles table
   has_many :user_roles, dependent: :destroy
   has_many :roles, through: :user_roles

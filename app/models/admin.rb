@@ -10,4 +10,9 @@ class Admin < ApplicationRecord
 
   has_many :admin_users, dependent: :destroy
   has_many :users, through: :admin_users
+
+  # TODO: add validation for email and password.
+  # TODO: remove user role for admin table role.
+  # TODO: add admin users for users where admin is true.
+
 end
