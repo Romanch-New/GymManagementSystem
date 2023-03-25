@@ -52,6 +52,9 @@ gem "bootsnap", require: false
 gem 'devise'
 # cancancan gem for authorization [cancancan gem documentation](for more details about use)
 gem 'cancancan'
+# rails-erd gem for generating entity relationship diagram [rails-erd gem documentation](for more details about use)
+gem 'rails-erd'
+
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
