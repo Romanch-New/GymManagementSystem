@@ -1,8 +1,11 @@
+# This controller uses responders gem for simplifying common controller actions
+# todo: add responders gem to gemfile and use it in this controller.
+# gem 'jsonapi-serializer'
+# gem 'draper'
 class AdminsController < ApplicationController
   before_action :authenticate_admin!
   # load_and_authorize_resource
 
-  # todo: add more actions for admins.
   # todo: add admin user controller to admin namespace.
   # todo: add roles controller and give admin ability to add roles to users.
   # todo: allow admin to add users and those users will set admin to true.

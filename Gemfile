@@ -49,6 +49,8 @@ gem "bootsnap", require: false
 gem 'devise'
 # cancancan gem for authorization [cancancan gem documentation](for more details about use)
 gem 'cancancan'
+# route_translator gem for multi language [route_translator gem documentation](for more details about use)
+# gem 'route_translator'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -69,7 +71,21 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-
+  # Use better errors for debugging [ in browser]
+  gem "better_errors"
+  gem "binding_of_caller"
+  # Use annotate to add comments to models and migrations [ for more details about use]
+  gem 'annotate'
+  # Use awesome_print to pretty print objects [ for more details about use]
+  gem 'awesome_print'
+  # Use bullet to detect N+1 queries [ for more details about use]
+  # table = Terminal::Table.new :headings => ['ID', 'Title', 'Content'], :rows => rows
+  gem 'terminal-table'
+  # Use formatador to pretty print objects [ for more details about use]
+  # Formatador.display_line("Hello World")
+  gem 'formatador', '~> 1.1'
+  # Use bullet to detect N+1 queries [ notification for queries issue in development]
+  gem "bullet"
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
