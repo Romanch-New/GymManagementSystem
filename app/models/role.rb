@@ -15,13 +15,8 @@ class Role < ApplicationRecord
   has_many :admin_roles, dependent: :nullify
   has_many :admins, through: :admin_roles
 
-  # set enum for roles
-  enum name: { user: 'user', admin: 'admin', super_admin: 'super_admin', coach: 'coach' }
-  # create roles with enum name
-  Role.names.each_key do |role|
-    Role.find_or_create_by(name: role)
-  end
-  # TODO: restrict roles:user in Role for admin created users.
+
+  # TODO: restrict roles:user in Role to set for user created by admin.
   # TODO: add admin users for users where admin is true.
   # TODO: add default role to user for all users except defined roles.
   # todo: use cancancan ability to define user roles.
