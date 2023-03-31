@@ -51,6 +51,8 @@ gem 'devise'
 gem 'cancancan'
 # route_translator gem for multi language [route_translator gem documentation](for more details about use)
 # gem 'route_translator'
+# add rolify gem for role management [rolify gem documentation](for more details about use)
+gem 'rolify'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -59,7 +61,8 @@ group :development, :test do
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
   gem 'rubocop-sequel', require: false
-  # rails-erd gem for generating entity relationship diagram [rails-erd gem documentation](for more details about use)
+  # rails-erd gem for generating entity relationship diagram
+  # [rails-erd gem documentation](for more details about use)
   gem 'rails-erd'
   # faker gem for generating fake data [faker gem documentation](for more details about use)
   gem 'faker'

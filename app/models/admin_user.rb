@@ -5,16 +5,22 @@
 # Table name: admin_users
 #
 #  id         :bigint           not null, primary key
-#  admin_id   :bigint           not null
-#  user_id    :bigint           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  admin_id   :bigint           not null
+#  user_id    :bigint           not null
 #
-# create class for table admin_users
-# class AdminUser < ApplicationRecord
-#  belongs_to :admin
-# belongs_to :user
-# end
+# Indexes
+#
+#  index_admin_users_on_admin_id              (admin_id)
+#  index_admin_users_on_admin_id_and_user_id  (admin_id,user_id) UNIQUE
+#  index_admin_users_on_user_id               (user_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (admin_id => admins.id)
+#  fk_rails_...  (user_id => users.id)
+#
 class AdminUser < ApplicationRecord
   belongs_to :admin, dependent: :destroy
   belongs_to :user, dependent: :destroy

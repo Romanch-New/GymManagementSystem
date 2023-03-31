@@ -3,15 +3,20 @@
 # Table name: users
 #
 #  id                     :bigint           not null, primary key
+#  admin                  :boolean
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
-#  reset_password_token   :string
-#  reset_password_sent_at :datetime
+#  name                   :string
 #  remember_created_at    :datetime
+#  reset_password_sent_at :datetime
+#  reset_password_token   :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  admin                  :boolean
-#  name                   :string
+#
+# Indexes
+#
+#  index_users_on_email                 (email) UNIQUE
+#  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
@@ -24,8 +29,6 @@ class User < ApplicationRecord
   def set_default_admin
     self.admin = false if admin.nil?
   end
-
-  # Todo: add more parameters for user.
 
   # create many to many relationship with roles table by using user_roles table
   has_many :user_roles, dependent: :destroy

@@ -205,6 +205,7 @@ GEM
       actionpack (>= 5.2)
       railties (>= 5.2)
     rexml (3.2.5)
+    rolify (6.0.1)
     rubocop (1.48.1)
       json (~> 2.3)
       parallel (~> 1.10)
@@ -303,6 +304,7 @@ DEPENDENCIES
   rails (~> 7.0.4, >= 7.0.4.2)
   rails-erd
   redis (~> 4.0)
+  rolify
   rubocop
   rubocop-performance
   rubocop-rails

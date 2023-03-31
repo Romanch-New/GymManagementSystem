@@ -5,16 +5,22 @@
 # Table name: admin_roles
 #
 #  id         :bigint           not null, primary key
-#  admin_id   :bigint           not null
-#  role_id    :bigint           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  admin_id   :bigint           not null
+#  role_id    :bigint           not null
 #
-#create class for table admin_roles
-# class AdminRole < ApplicationRecord
-#  belongs_to :admin
-# belongs_to :role
-# end
+# Indexes
+#
+#  index_admin_roles_on_admin_id              (admin_id)
+#  index_admin_roles_on_admin_id_and_role_id  (admin_id,role_id) UNIQUE
+#  index_admin_roles_on_role_id               (role_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (admin_id => admins.id)
+#  fk_rails_...  (role_id => roles.id)
+#
 class AdminRole < ApplicationRecord
   belongs_to :admin
   belongs_to :role
