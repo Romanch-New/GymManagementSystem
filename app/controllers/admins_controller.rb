@@ -29,4 +29,11 @@ class AdminsController < ApplicationController
   # todo: add payment functionality for users and admins.
   # todo: add payment gateway for users and admins.
   # todo: add analytics for dashboard.
+
+
+  private
+
+  def admin_params
+    params.require(:admin).permit(:name, :email, :password, :password_confirmation)
+  end
 end
