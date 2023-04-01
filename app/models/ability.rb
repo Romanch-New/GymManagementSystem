@@ -3,20 +3,20 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user)
-    user ||= User.new # guest user (not logged in)
+  # def initialize(user)
+  #   user ||= User.new # guest user (not logged in)
+  #   if user.role?('admin')
+  #     can :manage, :all
+  #   elsif user.has_role?('Coaches')
+  #     can :read, :all
+  #     can :create, Article
+  #   else
+  #     can :read, :all
+  #     can :create, Article
+  #     can :update, Article, user_id: user.id
+  #     can :destroy, Article, user_id: user.id
+  #   end
 
-    if user.admin?
-      can :manage, :all
-    elsif user.staff?
-      can :read, :all
-      can :create, Article
-    else
-      can :read, :all
-      can :create, Article
-      can :update, Article, user_id: user.id
-      can :destroy, Article, user_id: user.id
-    end
     # Define abilities for the user here. For example:
     #
     #   return unless user.present?

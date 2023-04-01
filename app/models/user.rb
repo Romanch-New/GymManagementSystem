@@ -24,12 +24,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  after_initialize :set_default_admin, if: :new_record?
-
-  def set_default_admin
-    self.admin = false if admin.nil?
-  end
-
   # create many to many relationship with roles table by using user_roles table
   has_many :user_roles, dependent: :destroy
   has_many :roles, through: :user_roles
@@ -52,5 +46,15 @@ class User < ApplicationRecord
                                            one uppercase letter, and one digit' }
 
   validates :admin, inclusion: { in: [true, false] }
+
+  attribute :admin, :boolean, default: false
+
+  before_validation :set_admin_attribute, if: :admin
+
+  private
+
+  def set_admin_attribute
+    self.admin = true
+  end
 
 end
