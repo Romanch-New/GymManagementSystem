@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   devise_for :admins
   devise_for :users
 
-  namespace :admin do
+  namespace :admins do
     resources :users, only: [:index, :new, :create]
   end
 

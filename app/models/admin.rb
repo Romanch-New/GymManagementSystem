@@ -5,6 +5,7 @@
 # Table name: admins
 #
 #  id                     :bigint           not null, primary key
+#  admins                  :boolean          default(TRUE)
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
 #  name                   :string

@@ -18,7 +18,7 @@ class CreateRoles < ActiveRecord::Migration[7.0]
 
     # Create default roles
     Role.create(name: 'user')
-    Role.create(name: 'admin')
+    Role.create(name: 'admins')
     Role.create(name: 'super_admin')
     Role.create(name: 'coach')
   end
