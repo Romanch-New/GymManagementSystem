@@ -26,6 +26,7 @@ class Admin < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates_presence_of :name, :email, presence: true
+
   validates :name, format: { with: /\A[a-zA-Z]+\z/, message: 'only allows letters' }
   validates :name, length: { minimum: 2, maximum: 20 }
 

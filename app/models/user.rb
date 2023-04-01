@@ -31,15 +31,13 @@ class User < ApplicationRecord
   has_many :admin_users, dependent: :nullify
   has_many :admins, through: :admin_users
 
-  validates :name, presence: true
+  validates :name, :email, :password, presence: true
   validates :name, format: { with: /\A[a-zA-Z]+\z/, message: 'only allows letters' }
   validates :name, length: { minimum: 2, maximum: 20 }
 
-  validates :email, presence: true
   validates :email, uniqueness: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP, message: 'only allows valid email' }
 
-  validates :password, presence: true
   validates :password, length: { minimum: 8 }
   validates :password, format: { with: /\A(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+\z/,
                                  message: 'must contain at least one lowercase letter,
