@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
-# admins::UsersController < ApplicationController
-  class Admins::UsersController < ApplicationController
+# admin namespace for admin users controller
+module Admins
+  # UsersController < ApplicationController
+  class UsersController < ApplicationController
     before_action :authenticate_admin!
-    binding.pry
     # Use the same layout as the regular users controller
     layout 'application'
 
@@ -46,4 +47,5 @@
         redirect_to root_path
     end
   end
+end
 

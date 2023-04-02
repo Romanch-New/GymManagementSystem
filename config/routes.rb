@@ -7,11 +7,13 @@ Rails.application.routes.draw do
   root to: "home#index"
   get 'home/index', to: 'home#index'
 
-  devise_for :admins
-  devise_for :users
+  namespace :user, as: '' do
+    devise_for :users, path: ''
+  end
 
-  namespace :admins do
-    resources :users, only: [:index, :new, :create]
+  namespace :admins, as: '' do
+    devise_for :admins, path: ''
+    resources :users, only: [:new, :create], as: 'admin_users'
   end
 
 end
