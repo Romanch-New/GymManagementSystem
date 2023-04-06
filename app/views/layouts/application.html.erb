@@ -10,10 +10,11 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body>
+  <body class="container">
 <!--    TODO: add tailwindcss to the project -->
 <!--     todo: add header and use tailwindUI for the header.-->
     <%= render "layouts/header" %>
     <%= yield %>
+    <%= render "layouts/footer" %>
   </body>
 </html>
