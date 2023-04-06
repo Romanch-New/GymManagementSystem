@@ -5,12 +5,9 @@
 class AdminsController < ApplicationController
   # load_and_authorize_resource
 
-  # todo: add admins user controller to admins namespace.
   # todo: add roles controller and give admins ability to add roles to users.
-  # todo: allow admins to add users and those users will set admins to true.
   # todo: add json response for all actions.
   # todo: give privileges to admins and users as per role to access actions in the application.
-  # todo: add routs for admins namespace and other controllers
   # todo: add blog post and comments functionality for users and admins.
   # todo: add admins dashboard to show all users and admins.
   # todo: add admins dashboard to show all roles and users.

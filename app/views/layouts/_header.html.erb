@@ -3,7 +3,7 @@
 
 <nav>
   <% if user_signed_in? %>
-    Logged in as personal addcount<strong><%= current_user.email %></strong>.
+    Logged in as personal account <strong><%= current_user.email %></strong>.
     <%= link_to "Edit profile", edit_user_registration_path, class: "navbar-link" %> |
     <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "navbar-link"  %>
   <% elsif admin_signed_in? %>

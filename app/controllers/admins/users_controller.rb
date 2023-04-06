@@ -9,7 +9,7 @@ module Admins
     layout 'application'
 
     def new
-      admin = Admin.find_by(admin_id: current_user.id)
+      admin = Admin.find_by(admin_id: current_admins_admin.id)
       if admin.present?
         @user = admin.user.new
       else
@@ -19,17 +19,13 @@ module Admins
     end
 
     def create
-      admin = Admin.find_by(admin_id: current_user.id)
-      if admin.present?
-        @user = admin.users.new(admin_user_params)
-        @user.admin = true
-        if @user.save
-          render json: { message: 'User created successfully' }, status: :created
-        else
-          render json: { message: 'User creation failed' }, status: :unprocessable_entity
-        end
+      admin = Admin.find_by(admin_id: current_admins_admin.id)
+      @user = admin.users.new(admin_user_params)
+      @user.admin = true
+      if @user.save
+        render json: { message: 'User created successfully' }, status: :created
       else
-        render json: { message: 'Unauthorized access' }, status: :unauthorized
+        render json: { message: 'User creation failed' }, status: :unprocessable_entity
       end
     end
 
@@ -42,9 +38,10 @@ module Admins
 
     def authenticate_admin!
 
-      return if current_user.admin?
-        flash[:alert] = 'You are not authorized to access this resource.'
-        redirect_to root_path
+      return if current_admins_admin.present?
+
+      flash[:alert] = 'You are not authorized to access this resource.'
+      redirect_to root_path
     end
   end
 end

@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# ApplicationController < ActionController::Base
 class ApplicationController < ActionController::Base
   include Devise::Controllers::Helpers
   # # redirect_to new_user_session_path unless current_user && current_user.admins?
