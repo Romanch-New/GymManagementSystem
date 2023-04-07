@@ -9,7 +9,7 @@ module Admins
     layout 'application'
 
     def new
-      admin = Admin.find_by(admin_id: current_admins_admin.id)
+      admin = Admin.find_by(admin_id: current_admin.id)
       if admin.present?
         @user = admin.user.new
       else
@@ -19,7 +19,7 @@ module Admins
     end
 
     def create
-      admin = Admin.find_by(admin_id: current_admins_admin.id)
+      admin = Admin.find_by(admin_id: current_admin.id)
       @user = admin.users.new(admin_user_params)
       @user.admin = true
       if @user.save
@@ -38,7 +38,7 @@ module Admins
 
     def authenticate_admin!
 
-      return if current_admins_admin.present?
+      return if current_admin.present?
 
       flash[:alert] = 'You are not authorized to access this resource.'
       redirect_to root_path

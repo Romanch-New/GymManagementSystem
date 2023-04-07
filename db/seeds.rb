@@ -7,7 +7,6 @@
 #   Character.create(name: "Luke", movie: movies.first)
 # binding.pry
 #delete all table before create new data
-require 'pry'
 
 AdminRole.delete_all
 AdminUser.delete_all
