@@ -1,5 +1,7 @@
 # Gym Management System
 
+![alt text](public/homepage.png)
+
 ## Overview
 
 This is a web-based gym management system developed using Ruby on Rails. It helps gym owners manage their facilities, memberships, and clients.
