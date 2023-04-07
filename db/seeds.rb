@@ -75,7 +75,7 @@ puts "admins User 1 roles: #{admin_user_1.roles.pluck(:name)}"
 puts "admins User 2 roles: #{admin_user_2.roles.pluck(:name)}"
 
 # associate regular users with roles
-user_role = Role.create(name: 'user')
+user_role = Role.create(name: 'users')
 # use pry to test
 
 user_1.roles << user_role

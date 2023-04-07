@@ -95,14 +95,10 @@
               <p>Logged in as admin account<%= current_admin.email %> (<%= current_admin.name %>)</p>
               <%= button_to "Logout", destroy_admin_session_path, method: :delete, data: {confirm: "Are you sure"} %>
             <% else %>
-              <%= link_to "Sign up", new_user_registration_path, class: "navbar-link"  %> |
-              <%= link_to "Login", new_user_session_path, class: "navbar-link"  %>
+              <%= link_to "Login", new_user_session_path, class: "block px-4 py-2 text-sm text-gray-700"  %>
             <% end %>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
 
             <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
-
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
           </div>
         </div>
       </div>

@@ -16,12 +16,12 @@ class AdminsController < ApplicationController
   # todo: add admins dashboard to show all admins and roles.
   # todo: add admins dashboard to show all admins and users.
   # todo: add gym modle that has_many: memberships and has_many: users through: memberships.
-  # todo: add membership model that belongs_to: user and belongs_to: gym.
+  # todo: add membership model that belongs_to: users and belongs_to: gym.
   # todo: add has_many: plans in gym model.
   # todo: add gym mebership functionality for users and admins.
   # todo: add plan model belong to gym. has  many subscriptions dependent destroy.
   # todo: add subscription to gym membership functionality for users and admins.
-  # todo: subscriptin belong to user and belong to plan.
+  # todo: subscriptin belong to users and belong to plan.
   # todo: add payment functionality for users and admins.
   # todo: add payment gateway for users and admins.
   # todo: add analytics for dashboard.

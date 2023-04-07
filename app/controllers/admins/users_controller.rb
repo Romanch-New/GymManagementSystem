@@ -31,7 +31,7 @@ module Admins
 
     private
 
-    # admins user params
+    # admins users params
     def admin_user_params
       params.require(:user).permit(:email, :password, :password_confirmation, :name)
     end

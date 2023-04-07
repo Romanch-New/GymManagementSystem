@@ -5,15 +5,14 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   root to: "home#index"
-  get 'home/index', to: 'home#index'
 
-  namespace :user, as: '' do
-    devise_for :users, path: ''
+  scope module: :users do
+    devise_for :users
   end
 
-  namespace :admins, as: '' do
-    devise_for :admins, path: ''
-    resources :users, only: [:new, :create], as: 'admin_users'
+  scope module: :admins do
+    devise_for :admins
+    resources :users, only: [:new, :create], as: 'admin_users', path: 'admin/users'
   end
 
 end

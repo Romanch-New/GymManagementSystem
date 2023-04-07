@@ -14,6 +14,6 @@ class Role < ApplicationRecord
   has_many :admin_roles, dependent: :nullify
   has_many :admins, through: :admin_roles
 
-  # TODO: add default role to user for all users except defined roles.
-  # todo: use cancancan ability to define user roles.
+  # TODO: add default role to users for all users except defined roles.
+  # todo: use cancancan ability to define users roles.
 end
