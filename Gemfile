@@ -61,13 +61,14 @@ group :development, :test do
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
   gem 'rubocop-sequel', require: false
+
   # rails-erd gem for generating entity relationship diagram
-  # [rails-erd gem documentation](for more details about use)
   gem 'rails-erd'
   # faker gem for generating fake data [faker gem documentation](for more details about use)
   gem 'faker'
-  # pry gem for debugging [pry gem documentation](for more details about use)
+  # pry-rails gem for debugging [pry-rails gem documentation](for more details about use)
   gem 'pry-rails'
+  # pry gem for debugging [pry gem documentation](for more details about use)
   gem 'pry'
 end
 

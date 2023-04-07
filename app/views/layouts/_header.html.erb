@@ -1,20 +1,6 @@
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
-<nav class="table-header-group">
-  <% if user_signed_in? %>
-    Logged in as personal account <strong><%= current_user.email %></strong>.
-    <%= link_to "Edit profile", edit_user_registration_path, class: "navbar-link" %> |
-    <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "navbar-link"  %>
-  <% elsif admin_signed_in? %>
-    <p>Logged in as admin account<%= current_admin.email %> (<%= current_admin.name %>)</p>
-    <%= button_to "Logout", destroy_admin_session_path, method: :delete, data: {confirm: "Are you sure"} %>
-  <% else %>
-    <%= link_to "Sign up", new_user_registration_path, class: "navbar-link"  %> |
-    <%= link_to "Login", new_user_session_path, class: "navbar-link"  %>
-  <% end %>
-</nav>
-
 <!--
   This example requires some changes to your config:
 
@@ -101,6 +87,17 @@
           -->
           <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
             <!-- Active: "bg-gray-100", Not Active: "" -->
+            <% if user_signed_in? %>
+              Logged in as personal account <strong><%= current_user.email %></strong>.
+              <%= link_to "Edit profile", edit_user_registration_path, class: "block px-4 py-2 text-sm text-gray-700" %> |
+              <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "navbar-link"  %>
+            <% elsif admin_signed_in? %>
+              <p>Logged in as admin account<%= current_admin.email %> (<%= current_admin.name %>)</p>
+              <%= button_to "Logout", destroy_admin_session_path, method: :delete, data: {confirm: "Are you sure"} %>
+            <% else %>
+              <%= link_to "Sign up", new_user_registration_path, class: "navbar-link"  %> |
+              <%= link_to "Login", new_user_session_path, class: "navbar-link"  %>
+            <% end %>
             <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
 
             <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>

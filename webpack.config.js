@@ -31,9 +31,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.optimize.LimitChunkCountPlugin({
-      maxChunks: 1
-    }),
     new MiniCssExtractPlugin({
       filename: "[name].css"
     })
