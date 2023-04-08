@@ -1,11 +1,10 @@
 # Gym Management System
 
-![alt text](public/homepage.png)
-
 ## Overview
 
 This is a web-based gym management system developed using Ruby on Rails. It helps gym owners manage their facilities, memberships, and clients.
 
+![alt text](public/homepage.png)
 ## Features
 
 * User authentication
@@ -17,8 +16,10 @@ This is a web-based gym management system developed using Ruby on Rails. It help
 
 Clone the repository to your local machine
 bash
-1. Copy code
-```git clone https://github.com/your-username/gym-management-system.git```
+1. Clone the repository
+```Copy code 
+git clone https://github.com/your-username/gym-management-system.git 
+```
 2. Install the required gems
 ```Copy code
 bundle install
