@@ -12,8 +12,8 @@ Rails.application.routes.draw do
 
   scope module: :admins do
     devise_for :admins
-    resources :users, only: [:new, :create], as: 'admin_users', path: 'admin/users'
     namespace :users, as: 'admin', path: 'admin' do
+      resources :users, only: [:new, :create]
       devise_for :users
     end
   end

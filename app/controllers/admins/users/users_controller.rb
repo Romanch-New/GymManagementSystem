@@ -3,7 +3,7 @@
 # admin namespace for admin users controller
 module Admins
   # UsersController < ApplicationController
-  class UsersController < ApplicationController
+  class Users::UsersController < ApplicationController
     before_action :authenticate_admin!
     # Use the same layout as the regular users controller
     layout 'application'
@@ -38,7 +38,7 @@ module Admins
 
     def authenticate_admin!
 
-      return if current_admin.present?
+      return if current_admin
 
       flash[:alert] = 'You are not authorized to access this resource.'
       redirect_to root_path
